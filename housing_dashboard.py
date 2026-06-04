@@ -3,9 +3,14 @@ import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.io as pio
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # ── 1. CONFIGURATION ──────────────────────────────────────────────
-API_KEY = "REDACTED"   # same Census API key as before
+API_KEY = os.getenv("CENSUS_API_KEY")
+
 YEAR    = 2022
 
 # States to compare: name, FIPS code
